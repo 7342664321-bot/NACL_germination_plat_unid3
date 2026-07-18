@@ -1,0 +1,33 @@
+---
+title: "Introdución"
+---
+
+::: {style="text-align: justify;"}
+El maíz (Zea mays L.) es un cultivo de gran importancia alimentaria y agrícola; por ello, la germinación constituye una etapa clave porque determina el establecimiento inicial de la planta. Durante esta fase, la semilla absorbe agua, activa su metabolismo y forma las primeras estructuras de la plántula, procesos que pueden verse afectados por condiciones adversas del ambiente (Ahmed et al., 2017).
+
+La salinidad es un factor abiótico que reduce el potencial hídrico del medio y genera estrés osmótico e iónico, dificultando la absorción de agua y retrasando o disminuyendo la germinación.
+:::
+
+![](https://tse3.mm.bing.net/th/id/OIP.kLcnaKbLuFzd7ZeZfD7qoAHaE7?r=0&pid=Api&P=0&h=180){width="671"}
+
+::: {style="text-align: justify;"}
+# OBJETIVOS
+
+## General
+
+Evaluar el efecto de diferentes concentraciones de NaCl sobre la germinación y el desarrollo inicial de plántulas de maíz (Zea mays L.).
+
+## Específicos
+
+⇒ Determinar el porcentaje de germinación
+
+⇒ Evaluar la velocidad de germinación
+
+⇒ Evaluar el tiempo medio de germinación
+
+⇒ Evaluar el índice de sincronía de germinación
+
+# Hipótesis
+
+El aumento de la concentración de NaCl reduce el porcentaje de germinación y afecta negativamente el crecimiento inicial de las plántulas.
+:::

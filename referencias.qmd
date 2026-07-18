@@ -1,0 +1,17 @@
+---
+title: "Referencias"
+---
+
+::: {style="text-align: justify;"}
+1.  Ahmed, R., Howlader, M. H. K., Shila, A., & Haque, M. A. (2017). Effect of salinity on germination and early seedling growth of maize. Progressive Agriculture, 28(1), 18–25. [doi: 10.3329/pa.v28i1.32855.](doi:%2010.3329/pa.v28i1.32855.)
+
+2.  Konuşkan, Ö., Gözübenli, H., Atiş, İ., & Atak, M. (2017). Effects of salinity stress on emergence and seedling growth parameters of some maize genotypes (Zea mays L.). Turkish Journal of Agriculture–Food Science and Technology, 5(12), 1668–1672. [doi: 10.24925/turjaf.v5i12.1668-1672.1664](doi: 10.24925/turjaf.v5i12.1668-1672.1664)
+
+3.  Khalid, N., Tarnawa, Á., Balla, I., Omar, S., Abd Ghani, R., Jolánkai, M., & Kende, Z. (2023). Combination effect of temperature and salinity stress on germination of different maize (Zea mays L.) varieties. Agriculture, 13(10), 1932. <doi:10.3390/agriculture13101932.>
+
+4.  Liang, W., Ma, X., Wan, P., & Liu, L. (2018). Plant salt-tolerance mechanism: A review. Biochemical and Biophysical Research Communications, 495(1), 286–291. <doi:10.1016/j.bbrc.2017.11.043.>
+
+5.  Ren, S., Tan, J., Zhou, S., Sun, H., Li, H., Li, W., Li, N., Wu, J., Ren, X., Ci, J., & Yang, W. (2025). Germplasm selection and comprehensive evaluation of maize inbred lines at germination and seedling stage for saline–alkali tolerance. Agronomy, 15(3), 626. <doi:10.3390/agronomy15030626.>
+
+6.  Shahzad, H., Ullah, S., Iqbal, M., Bilal, H. M., Shah, G. M., Ahmad, S., Zakir, A., Ditta, A., Farooqi, M. A., & Ahmad, I. (2019). Salinity types and level-based effects on the growth, physiology and nutrient contents of maize (Zea mays). Italian Journal of Agronomy, 14(4), 199–207. <doi:10.4081/ija.2019.1326.>
+:::

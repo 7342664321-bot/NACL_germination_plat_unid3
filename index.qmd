@@ -1,0 +1,62 @@
+---
+title: "_"
+---
+
+:::::: {style="text-align: center;"}
+## UNIVERSIDAD NACIONAL TORIBIO RODRÍGUEZ DE MENDOZA DE AMAZONAS
+
+![](https://upload.wikimedia.org/wikipedia/commons/9/95/Logo-2016-solo-ok.png){width="4.8cm"}
+
+## FACULTAD DE INGENIERÍA Y CIENCIAS AGRARIAS
+
+## ESCUELA PROFESIONAL DE INGENIERÍA AGRÓNOMA
+
+## EFECTO DE DIFERENTES CONCENTRACIONES DE NACL SOBRE LA GERMINACIÓN DE SEMILLAS DE MAÍZ AMARILLO COMÚN (*Zea mays* L.)
+
+<br>
+
+::: {style="text-align: center;"}
+# INTEGRANTES
+:::
+
+<br>
+
+Silva Castro Luis
+
+Lalangui Peña Jefferson
+
+Ivan Ramos Briceño
+
+Santos PeláezEmerson
+
+Villa Tochon Jorge Luis
+
+::: {style="width: 60%; margin: auto; background-color: #f3f3f3; padding: 20px; border-radius: 12px; text-align: center; font-size: 18px;"}
+:::
+
+<br>
+
+::: {style="text-align: center;"}
+## DOCENTE
+
+Dr. Lozano Isla, Flavio
+
+<br>
+
+## CURSO
+
+Producción y Tecnología de Semillas
+
+<br>
+
+## CICLO ACADÉMICO
+
+2026 - I
+:::
+
+------------------------------------------------------------------------
+
+## Libro de Campo
+
+<https://docs.google.com/spreadsheets/d/1JoyeRmb7oALd8wfzGgjBZc7anbFwYNbEMd3d9sCRUu4/edit?gid=1627057956#gid=1627057956>
+::::::

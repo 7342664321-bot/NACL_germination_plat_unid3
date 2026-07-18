@@ -1,0 +1,13 @@
+---
+title: "CONCLUSIONES"
+---
+
+::: {style="text-align: justify;"}
+
+⇒ Porcentaje de germinación. El control, 0,5 y 1,0 g/100 mL presentaron porcentajes altos y estadísticamente similares. En cambio, 1,5 y 2,0 g/100 mL redujeron significativamente la germinación, siendo 1,5 g/100 mL el tratamiento con mayor efecto negativo.
+
+⇒ Velocidad de germinación. La velocidad se mantuvo similar entre el control y los tratamientos hasta 1,5 g/100 mL, lo que indica que las semillas que lograron germinar lo hicieron con ritmo semejante. No obstante, en 2,0 g/100 mL la velocidad disminuyó, evidenciando menor vigor germinativo.
+
+⇒ Tiempo medio de germinación. El tratamiento de 2,0 g/100 mL presentó el mayor tiempo medio, demostrando que la alta concentración de NaCl retrasó la germinación. Los demás tratamientos mostraron tiempos menores y similares, por lo que no generaron un retraso significativo.
+
+⇒ Índice de sincronía. No se encontraron diferencias estadísticas entre tratamientos, por lo que la sincronía no fue la variable más sensible al NaCl. El estrés salino afectó más la cantidad y rapidez de semillas germinadas que la uniformidad del proceso.

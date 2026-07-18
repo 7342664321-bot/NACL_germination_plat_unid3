@@ -1,0 +1,355 @@
+---
+title: ""
+author: ""
+format:
+  html:
+    toc: true
+    toc-expand: true
+    toc-depth: 4
+    toc-location: left
+    number-sections: true
+    self-contained: true
+    code-fold: true
+    output-file: "ESM"
+editor_options: 
+  chunk_output_type: console
+execute: 
+  warning: false
+  message: false
+  echo: true
+---
+
+# Project Setup
+
+```{r}
+#| label:  setup
+
+source('https://inkaverse.com/setup.r')
+```
+
+# Data import
+
+```{r}
+gs <- "https://docs.google.com/spreadsheets/d/1JoyeRmb7oALd8wfzGgjBZc7anbFwYNbEMd3d9sCRUu4/edit?gid=1627057956#gid=1627057956" %>% 
+  as_sheets_id()
+
+fb <- gs %>% 
+  range_read(ss = .,sheet = "fb")
+```
+
+#Cálculo de índices de germinación
+
+```{r}
+# Install packages and dependencies
+
+library(GerminaR)
+library(factoextra)
+library(dplyr)
+
+# Prosopis data set
+
+fb %>% 
+   head(10) %>% 
+   kable(caption = "fb_dataset")
+```
+
+```{r}
+
+# germination analysis (ten variables)
+
+gsm <- ger_summary(factors = c("Nacl")
+                   , SeedN = "Seed"
+                   , evalName = "Gr_"
+                   , cumulative =T
+                   , data = fb
+                   )
+
+# Prosopis data set processed
+
+gsm %>% 
+  head(10) %>% 
+  mutate(across(where(is.numeric), ~round(., 2))) %>% 
+  kable(caption = "Function ger_summary performe ten germination indices")
+```
+
+# Anova
+
+$$y = media + Nacl + error$$
+
+##Porcentaje de germinación
+
+```{r}
+# analysis of variance
+
+av_grp <- aov(grp ~ Nacl, data = gsm)
+Anova(av_grp)
+
+# mean comparison test
+
+mc_grp <- ger_testcomp(aov = av_grp
+                       , comp = c("Nacl")
+                       , type = "tukey"
+                       )
+
+# data result
+
+mc_grp$table %>% 
+  mutate(
+    across(where(is.numeric), ~ round(., 2))
+  ) %>% 
+  kable(
+    caption = "Comparison of germination percentage among scarification treatments using Tukey test"
+  )
+```
+
+```{r}
+library(GerminaR)
+#Gráfico
+grp <- mc_grp$table %>% 
+   fplot(data = .
+       , type = "bar"
+       , x = "Nacl"
+       , y = "grp"
+       , group = NULL
+       , ylimits = c(0, 120, 20)
+       , ylab = " Germinación ('%')"
+       , xlab = F
+       , legend = "none"
+       , sigsize = 4
+       , error = "ste"
+       , sig = "sig"
+       , color = T
+       )+ 
+  theme(
+    axis.title.x = element_text(size = 8),  # título eje X
+    axis.title.y = element_text(size = 9, face = "bold"),  # título eje Y
+    axis.text.x = element_text(size = 12),   # números/categorías eje X
+    axis.text.y = element_text(size = 10)    # números eje Y
+  )
+
+grp$layers[[1]]$aes_params$width <- 0.6
+
+grp
+
+ ggsave(plot =, "grp.jpg")
+```
+
+##Velocidad de germinación
+
+```{r}
+# analysis of variance
+
+avgsp <- aov(gsp ~ Nacl, data = gsm)
+Anova(avgsp)
+
+# mean comparison test
+
+mc_gsp <- ger_testcomp(aov = avgsp
+                       , comp = c("Nacl")
+                       , type = "tukey"
+                       )
+
+# data result
+
+mc_gsp$table %>% 
+  mutate(
+    across(where(is.numeric), ~ round(., 2))
+  ) %>% 
+  kable(
+    caption = "Comparación de la velocidad de germinación mediante tratamientos de escarificación usando la prubea de Tukey"
+  )
+```
+
+```{r}
+#Gráfico
+gsp <- mc_gsp$table %>% 
+   fplot(data = .
+       , type = "bar"
+       , x = "Nacl"
+       , y = "gsp"
+       , group = NULL
+       , ylimits = c(0, 10, 2)
+       , ylab = "Velocidad de germinación ('%')"
+       , xlab = F
+       , legend = "none"
+       , sigsize = 4
+       , error = "ste"
+       , sig = "sig"
+       , color = T
+       )+ 
+  theme(
+    axis.title.x = element_text(size = 8),  # título eje X
+    axis.title.y = element_text(size = 9, face = "bold"),  # título eje Y
+    axis.text.x = element_text(size = 12),   # números/categorías eje X
+    axis.text.y = element_text(size = 10)    # números eje Y
+  )
+
+gsp$layers[[1]]$aes_params$width <- 0.6
+
+gsp
+
+ ggsave(plot =, "gsp.jpg")
+```
+
+##Tiempo medio de germinación
+
+```{r}
+## Mean Germination Time (MGT)
+
+# analysis of variance
+
+avmgt <- aov(mgt ~ Nacl, data = gsm)
+anova(avmgt)
+
+# mean comparison test
+
+mc_mgt <- ger_testcomp(aov = avmgt
+                       , comp = c("Nacl")
+                       , type = "tukey")
+
+# data result
+
+mc_mgt$table %>% 
+  mutate(
+    across(where(is.numeric), ~ round(., 2))
+  ) %>% 
+  kable(
+    caption = "Comparación del tiempo medio de germinación"
+  )
+```
+
+```{r}
+#Gráfico
+
+# bar graphics for mean germination time
+
+mgt <- mc_mgt$table %>% 
+  fplot(data = .
+       , type = "bar" 
+       , x = "Nacl"
+       , y = "mgt"
+       , group = NULL
+       , ylimits = c(0,20, 2)
+       , ylab = "Tiempo medio de germinación (horas)"
+       , xlab = F
+       , sig = "sig"
+       , error = "ste"
+       , color = T
+       , legend = "none"
+       )+ 
+  theme(
+    axis.title.x = element_text(size = 8),  # título eje X
+    axis.title.y = element_text(size = 8.5, face = "bold"),  # título eje Y
+    axis.text.x = element_text(size = 12),   # números/categorías eje X
+    axis.text.y = element_text(size = 8)    # números eje Y
+  )
+
+mgt$layers[[1]]$aes_params$width <- 0.6
+
+mgt
+
+ ggsave(plot =, "mgt.jpg")
+```
+
+##Sincronía de germinación
+
+```{r}
+# analysis of variance
+
+avsyn <- aov(syn ~ Nacl, data = gsm)
+anova(avsyn)
+
+# mean comparison test
+
+mc_syn <- ger_testcomp(aov = avsyn
+                       , comp = c("Nacl")
+                       , type = "tukey")
+
+# data result
+
+mc_syn$table %>% 
+  mutate(
+    across(where(is.numeric), ~ round(., 2))
+  ) %>% 
+  kable(
+    caption = "Comparación de la sincronización"
+  )
+
+
+```
+
+```{r}
+#Gráfico
+
+# bar graphics for mean germination time
+
+syn <- mc_syn$table %>% 
+   fplot(data = .
+       , type = "bar" 
+       , x = "Nacl"
+       , y = "syn"
+       , group = NULL
+       , ylimits = c(0,1.2, 0.2)
+       , ylab = "Índice de sincronía de germinación"
+       , xlab = F
+       , sig = "sig"
+       , error = "ste"
+       , color = T
+       , legend = "none"
+       ) + 
+  theme(
+    axis.title.x = element_text(size = 8),  # título eje X
+    axis.title.y = element_text(size = 8.5, face = "bold"),  # título eje Y
+    axis.text.x = element_text(size = 12),   # números/categorías eje X
+    axis.text.y = element_text(size = 10)    # números eje Y
+  )
+
+
+syn$layers[[1]]$aes_params$width <- 0.6
+
+syn
+
+
+ ggsave(plot =, "syn.jpg")
+```
+
+#Unir imagenes
+
+```{r}
+library(cowplot)
+
+# Extraer la leyenda de uno de los gráficos
+leyenda <- get_legend(
+  grp + 
+    labs(fill = "Concentraciones de Nacl (gr)") +
+    theme(legend.position = "top")
+)
+
+# Quitar leyendas de los gráficos individuales
+grp2 <- grp + theme(legend.position = "none")
+mgt2 <- mgt + theme(legend.position = "none")
+gsp2 <- gsp + theme(legend.position = "none")
+syn2 <- syn + theme(legend.position = "none")
+
+# Unir gráficos
+plot_varger <- plot_grid(
+  plot_grid(grp2, mgt2, gsp2, syn2, ncol = 2, labels = "auto"),
+  leyenda,
+  ncol = 1,
+  rel_heights = c(6, 0.9)
+)
+
+plot_varger
+
+ggsave(
+  plot = plot_varger,
+  filename = "ver_ger.jpg",
+  units = "cm",
+  width = 30,
+  height = 15
+)
+```
+
+# PCA
+
+![](images/PCA_1)
